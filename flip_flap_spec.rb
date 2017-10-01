@@ -5,7 +5,6 @@ require_relative 'flip_flap'
 
 YML_DATA = File.read('data/survey.yml')
 TSV_DATA = File.read('data/survey.tsv')
-
 describe 'FlipFlap specs' do
   it 'supports tsv inputs' do
     _(FlipFlap.input_formats).must_include 'tsv'
@@ -14,7 +13,6 @@ describe 'FlipFlap specs' do
   it 'supports yaml inputs' do
     _(FlipFlap.input_formats).must_include 'yaml'
   end
-
   it 'should convert yml to tsv' do
     flipper = FlipFlap.new
     flipper.take_yaml(YML_DATA)
